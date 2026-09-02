@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PDF Comparison Report</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; color: #222; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  h2 { font-size: 17px; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+  .summary { background: #f4f4f4; padding: 15px 20px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; }
+  .summary b { color: #111; }
+  .legend { font-size: 12px; color: #555; margin-bottom: 20px; }
+  .legend span { display: inline-block; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+  .header-row { display: flex; font-weight: bold; font-size: 13px; color: #555; border-bottom: 2px solid #ccc; padding-bottom: 6px; margin-bottom: 4px; }
+  .row { display: flex; margin-bottom: 4px; border-bottom: 1px solid #eee; padding: 8px 0; }
+  .col { flex: 1; padding: 0 12px; font-size: 14px; line-height: 1.4; }
+  .page-tag { font-size: 11px; color: #999; margin-right: 6px; }
+  .unchanged { background: #ffffff; }
+  .added     { background: #d9f7d9; }
+  .removed   { background: #f8d7da; }
+  .removed .col { text-decoration: line-through; color: #7a2b32; }
+  .modified  { background: #fff3cd; }
+  .tag { display: inline-block; font-size: 11px; color: #6b5900; background: #ffe9a8; border-radius: 3px; padding: 1px 6px; margin-left: 6px; }
+  .tag.substantive { color: #7a1f1f; background: #f5c6c6; }
+  table.diff-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 13px; }
+  table.diff-table td, table.diff-table th { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  table.diff-table th { background: #f0f0f0; }
+  .cell-changed { background: #fff3cd; }
+  .table-block-title { font-size: 13px; color: #555; margin: 18px 0 4px; }
+</style>
+</head>
+<body>
+
+<h1>PDF Comparison Report</h1>
+
+<h2>Text Differences</h2>
+<div class="summary">
+  <b>Total units:</b> 48 &nbsp;|&nbsp;
+  <b>Unchanged:</b> 31 &nbsp;|&nbsp;
+  <b>Added:</b> 4 &nbsp;|&nbsp;
+  <b>Removed:</b> 4 &nbsp;|&nbsp;
+  <b>Modified:</b> 9
+  (6 substantive, 3 trivial)
+</div>
+<div class="legend">
+  <span class="added">Added</span>
+  <span class="removed">Removed</span>
+  <span class="modified">Modified</span>
+  unchanged rows are shown plain.
+</div>
+<div class="header-row">
+  <div class="col">Document A</div>
+  <div class="col">Document B</div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Our Reference No: QS1936 Agiliux Cloud Insurance 202201014293 (149990-A) 13 Kenwingston Business Centre, Persiaran Bestari Cyber 9 63000 Selangor
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Our Reference No: QS1937 Agiliux Cloud Insurance 202201014293 (149990-A) 13 Kenwingston Business Centre, Persiaran Bestari Cyber 9 63000 Selangor
+    <span class="tag substantive">substantive · 1.0</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    PLACEMENT SLIP NO: QS1936
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    PLACEMENT SLIP NO: QS1937
+    <span class="tag substantive">substantive · 0.98</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Tel No: +60311223344 Fax No: +603-4455 6677 PLACEMENT SLIP (ALL RISKS (OTHERS))
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Tel No: +60311223344 Fax No: +603-4455 6677 QUOTATION SLIP (ALL RISKS (OTHERS))
+    <span class="tag trivial">trivial · 0.8</span>
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CLASS OF INSURANCE: ALL RISKS (OTHERS)
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CLASS OF INSURANCE: ALL RISKS (OTHERS)
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CLIENT: SOFT SOLVERS TECHNOLOGY SDN BHD [202201014293 (149990-A)]
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CLIENT: SOFT SOLVERS TECHNOLOGY SDN BHD [202201014293 (149990-A)]
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CORRESPONDENCE: Persiaran Bestari Cyber 9 63000, Cyberjaya Selangor, Malaysia.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    CORRESPONDENCE: Persiaran Bestari Cyber 9 63000, Cyberjaya Selangor, Malaysia.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Phone: ADDRESS +603 8687 4433 13 Kenwingston Business Centre Malaysia
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Phone: ADDRESS +603 8687 4433 13 Kenwingston Business Centre Malaysia
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    PERIOD OF INSURANCE: 13-04-2026 to 12-04-2027 [365] days SUMMARY OF COVER : Summary of Cover
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    PERIOD OF INSURANCE: 13-04-2026 to 12-04-2027 [365] days SUMMARY OF COVER : Summary of Cover
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    Our Reference No: QS1936 INTEREST INSURED PREMIUM PAYABLE (SGD) Gross Premium 11,500.00 Service Tax (8.00%) 920.00 Premium Due 12,420.00
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    Our Reference No: QS1937 PREMIUM PAYABLE (SGD) Gross Premium 11,500.00 Service Tax (8.00%) 920.00 Premium Due 12,420.00
+    <span class="tag substantive">substantive · 0.96</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    BUSINESS ACTIVITY AT: Business Activity at Locations of Risk LOCATION[S] OF RISKS E. & O.E. 1 of 5
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    BUSINESS ACTIVITY AT: Business Activity at Locations of Risk LOCATION[S] OF RISKS INTEREST INSURED E. & O.E.
+    <span class="tag substantive">substantive · 0.89</span>
+  </div>
+</div>
+
+<div class="row removed">
+  <div class="col">
+    <span class="page-tag">p2</span>
+    Our Reference No: QS1936 EXTENSION CLAUSE E. & O.E. 2 of 5
+  </div>
+  <div class="col">
+    
+    
+    
+  </div>
+</div>
+
+<div class="row added">
+  <div class="col">
+    
+    
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    1 of 4
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    EXECUTIVE IN CHARGE: admin
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    EXECUTIVE IN CHARGE: admin
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    DATE: 01-09-2026
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    DATE: 01-09-2026
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    CONDITION PRECEDENT: 1.
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    CONDITION PRECEDENT: 1.
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    The validity of this Policy is subject to the condition precedent that: a) For the risk insured, the named insured has never had any insurance terminated in the last 12 months due solely or in part to a breach of any Premium Warranty condition; or b) If the named insured has declared that it had breached any Premium Warranty condition in respect of a previous policy taken up with another insurer in the last 12 months. i) The named insured has fully paid all outstanding premium for time on risk calculated by the previous insurer based on the customary short period rate in respect of the previous policy; and ii) A copy of the evidence of premium paid from the previous insurer to this effect is first provided by the named insured to the Company before cover incepts.” E. & O.E.
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    The validity of this Policy is subject to the condition precedent that: a) For the risk insured, the named insured has never had any insurance terminated in the last 12 months due solely or in part to a breach of any Premium Warranty condition; or b) If the named insured has declared that it had breached any Premium Warranty condition in respect of a previous policy taken up with another insurer in the last 12 months. i) The named insured has fully paid all outstanding premium for time on risk calculated by the previous insurer based on the customary short period rate in respect of the previous policy; and ii) A copy of the evidence of premium paid from the previous insurer to this effect is first provided by the named insured to the Company before cover incepts.”
+    <span class="tag trivial">trivial · 0.99</span>
+  </div>
+</div>
+
+<div class="row removed">
+  <div class="col">
+    <span class="page-tag">p3</span>
+    3 of 5
+  </div>
+  <div class="col">
+    
+    
+    
+  </div>
+</div>
+
+<div class="row removed">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Our Reference No: QS1936
+  </div>
+  <div class="col">
+    
+    
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    IMPORTANT NOTICE: Anti - Money Laundering Act 2001 - Verification Procedures We would like to highlight to all our clients that in accordance to the latest circular by Bank Negara Malaysia, all policies effected from October 01, 2004 will be subjected to the verification procedures.
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    IMPORTANT NOTICE: Anti - Money Laundering Act 2001 - Verification Procedures We would like to highlight to all our clients that in accordance to the latest circular by Bank Negara Malaysia, all policies effected from October 01, 2004 will be subjected to the verification procedures.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    The following documents are required to be submitted ; 1) For Individual - Copy of NRIC or Passport.
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    The following documents are required to be submitted ; 1) For Individual - Copy of NRIC or Passport.
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    2) For Corporate - Copy of Company Registration Certificate and/or Audited Profit and Loss Account
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    2) For Corporate - Copy of Company Registration Certificate and/or Audited Profit and Loss Account E. & O.E.
+    <span class="tag trivial">trivial · 0.96</span>
+  </div>
+</div>
+
+<div class="row added">
+  <div class="col">
+    
+    
+  </div>
+  <div class="col">
+    <span class="page-tag">p2</span>
+    2 of 4
+    
+  </div>
+</div>
+
+<div class="row added">
+  <div class="col">
+    
+    
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    Our Reference No: QS1937
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    DUTY OF DISCLOSURE: Your Duty of Disclosure: In addition to providing all basic information necessary to enable us to place the risk, you must ensure that you are complying with your legal duty of disclosure of all material matters relating to the risk.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    DUTY OF DISCLOSURE: Your Duty of Disclosure: In addition to providing all basic information necessary to enable us to place the risk, you must ensure that you are complying with your legal duty of disclosure of all material matters relating to the risk.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    In particular, you must satisfy yourself as to the accuracy and completeness of the information you provide to insurers.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    In particular, you must satisfy yourself as to the accuracy and completeness of the information you provide to insurers.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    In this respect, you must provide all information relating to the risk, whether favourable or not, which would influence the judgement of a prudent insurer in determining whether he will take the risk, and, if so, for what premium and on what terms.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    In this respect, you must provide all information relating to the risk, whether favourable or not, which would influence the judgement of a prudent insurer in determining whether he will take the risk, and, if so, for what premium and on what terms.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    If all such information is not disclosed by you, insurers have the right to avoid the contract from its commencement' which may lead to claims not being met.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    If all such information is not disclosed by you, insurers have the right to avoid the contract from its commencement' which may lead to claims not being met.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Non-Disclosure: If you fail to comply with your duty of disclosure, the Insurer may have the option of avoiding the contract of insurance from its beginning.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    Non-Disclosure: If you fail to comply with your duty of disclosure, the Insurer may have the option of avoiding the contract of insurance from its beginning.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    If your non-disclosure is fraudulent, the Insurer may also have the right to keep the premium that you have paid.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    If your non-disclosure is fraudulent, the Insurer may also have the right to keep the premium that you have paid.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Change of Risk or Circumstances: You should advise BIB Insurance Brokers Sdn Bhd as soon as practicable of any change to your normal business as disclosed in the application, such as changes in business activities, location, acquisitions and new overseas activities.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    Change of Risk or Circumstances: You should advise BIB Insurance Brokers Sdn Bhd as soon as practicable of any change to your normal business as disclosed in the application, such as changes in business activities, location, acquisitions and new overseas activities.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    E. & O.E.
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    E. & O.E.
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    Our Reference No: QS1936
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Our Reference No: QS1937
+    <span class="tag substantive">substantive · 0.96</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p4</span>
+    4 of 5
+  </div>
+  <div class="col">
+    <span class="page-tag">p3</span>
+    3 of 4
+    <span class="tag substantive">substantive · 0.84</span>
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    DECLARATION & CONSENT: In line with the Personal Data Protection Act 2010 (“PDPA”), we are required to inform you that the personal data you have provided to us or that is subsequently obtained by us from time to time (“Personal Data”), may be processed for the purpose of processing your insurance application/proposal, provision of insurance related products or services or any addition, alteration, variation, cancellation, renewal or reinstatement thereof, performing statistical/actuarial research or data study, promoting products and services and other related purposes (collectively, “Purpose”).
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    DECLARATION & CONSENT: In line with the Personal Data Protection Act 2010 (“PDPA”), we are required to inform you that the personal data you have provided to us or that is subsequently obtained by us from time to time (“Personal Data”), may be processed for the purpose of processing your insurance application/proposal, provision of insurance related products or services or any addition, alteration, variation, cancellation, renewal or reinstatement thereof, performing statistical/actuarial research or data study, promoting products and services and other related purposes (collectively, “Purpose”).
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    The Personal Data is obtained when you fill up documents; liaise with us or our representatives; or give it to us or our representatives in person, over the telephone, through websites or from third parties you have consented to.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    The Personal Data is obtained when you fill up documents; liaise with us or our representatives; or give it to us or our representatives in person, over the telephone, through websites or from third parties you have consented to.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    Although you are not obliged to provide us with your Personal Data, we will not be able to process your application for insurance cover or process your claim if you fail to provide all requested information.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Although you are not obliged to provide us with your Personal Data, we will not be able to process your application for insurance cover or process your claim if you fail to provide all requested information.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    Your Personal Data may be disclosed to our related company or any other company carrying on insurance or reinsurance related business, an intermediary, or a claims, investigation or other service provider and to any association, federation or similar organisation of insurance companies that exists or is formed from time to time for the Purpose or to fulfil some legal or regulatory function or is reasonably required in the interest of the insurance industry.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Your Personal Data may be disclosed to our related company or any other company carrying on insurance or reinsurance related business, an intermediary, or a claims, investigation or other service provider and to any association, federation or similar organisation of insurance companies that exists or is formed from time to time for the Purpose or to fulfil some legal or regulatory function or is reasonably required in the interest of the insurance industry.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    In such instances, it will be done in compliance with the PDPA.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    In such instances, it will be done in compliance with the PDPA.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    We may also disclose your Personal Data where such disclosure is required under the law, court orders or pursuant to guidelines issued by regulatory or other relevant authorities, if we reasonably believe that we have a lawful right to disclose your Personal Data to any third party or that we would have had your consent for such disclosure if you had known of the same, and/or if the disclosure is in the public interest.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    We may also disclose your Personal Data where such disclosure is required under the law, court orders or pursuant to guidelines issued by regulatory or other relevant authorities, if we reasonably believe that we have a lawful right to disclose your Personal Data to any third party or that we would have had your consent for such disclosure if you had known of the same, and/or if the disclosure is in the public interest.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    Your Personal Data may also be transferred to our related companies and third party providers, which may be located outside Malaysia for the Purpose.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Your Personal Data may also be transferred to our related companies and third party providers, which may be located outside Malaysia for the Purpose.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    In the event that we use external service providers, specific security and confidentiality safeguards have been put in place to ensure your privacy rights remain unaffected.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    In the event that we use external service providers, specific security and confidentiality safeguards have been put in place to ensure your privacy rights remain unaffected.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    Where you have given us personal data that is of another individual (“Data Subject”), you must ensure that you have informed the Data Subject that you are providing the Data Subject's personal data to us, and have gotten the Data Subject's consent to do so.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    Where you have given us personal data that is of another individual (“Data Subject”), you must ensure that you have informed the Data Subject that you are providing the Data Subject's personal data to us, and have gotten the Data Subject's consent to do so.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    You must explain what is stated here to the Data Subject, and ensure he/she understands, agrees and authorises us to deal with his/her personal data according to what is stated here.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    You must explain what is stated here to the Data Subject, and ensure he/she understands, agrees and authorises us to deal with his/her personal data according to what is stated here.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    You may make inquiries, complaints, request for access to or correction of your Personal Data, or limit the processing of your Personal Data at any time hereafter by submitting such request to us at BIB Insurance Brokers Sdn Bhd, Wisma Hong Leong, Lot 05.01, Level 5, 18, Jalan Perak, 50450 Kuala Lumpur, Federal Territory of Kuala Lumpur, 03-9078 2480.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    You may make inquiries, complaints, request for access to or correction of your Personal Data, or limit the processing of your Personal Data at any time hereafter by submitting such request to us at BIB Insurance Brokers Sdn Bhd, Wisma Hong Leong, Lot 05.01, Level 5, 18, Jalan Perak, 50450 Kuala Lumpur, Federal Territory of Kuala Lumpur, 03-9078 2480.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    By continuing to deal with us, you understand, agree and consent to the terms above with respect to the processing of your Personal Data.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    By continuing to deal with us, you understand, agree and consent to the terms above with respect to the processing of your Personal Data.
+    
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    E. & O.E.
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    E. & O.E.
+    
+  </div>
+</div>
+
+<div class="row removed">
+  <div class="col">
+    <span class="page-tag">p5</span>
+    5 of 5
+  </div>
+  <div class="col">
+    
+    
+    
+  </div>
+</div>
+
+<div class="row added">
+  <div class="col">
+    
+    
+  </div>
+  <div class="col">
+    <span class="page-tag">p4</span>
+    4 of 4
+    
+  </div>
+</div>
+
+
+
+<h2>Table Differences</h2>
+<div class="summary">
+  <b>Tables compared:</b> 4 &nbsp;|&nbsp;
+  <b>Rows unchanged:</b> 11 &nbsp;|&nbsp;
+  <b>Added:</b> 0 &nbsp;|&nbsp;
+  <b>Removed:</b> 19 &nbsp;|&nbsp;
+  <b>Modified:</b> 1
+  (1 substantive, 0 trivial)
+</div>
+
+
+<div class="table-block-title">
+  Table 1
+  
+</div>
+<table class="diff-table">
+
+  <tr class="unchanged">
+    
+      <td>INSURER(S)</td><td>Share(%)</td>
+    
+  </tr>
+
+  <tr class="modified">
+    
+      
+      <td class="cell-changed">[Sample] AIA PUBLIC TAKAFUL BHD &rarr; [Sample] ALLIANZ GENERAL INSURANCE COMPANY (MALAYSIA) BERHAD</td>
+      
+      <td class="">100.000000 &rarr; 100.000000</td>
+      
+    
+  </tr>
+
+</table>
+
+<div class="table-block-title">
+  Table 2
+  
+</div>
+<table class="diff-table">
+
+  <tr class="unchanged">
+    
+      <td>Section I</td><td></td><td>Sum Insured
+(SGD)</td><td>Rate (%)</td><td>Premium
+(SGD)</td><td>Deductible Type</td><td>Deductible
+Description</td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>1</td><td>On Renovations, Office Equipment,
+Furniture, Fittings & Fixtures
+including Air Conditioner,
+Computers, Software & Other
+Contents the like description</td><td>200,000.00</td><td>0.000000</td><td>7,500.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td></td><td></td><td>200,000.00</td><td></td><td>7,500.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>Section II</td><td></td><td>Sum Insured
+(SGD)</td><td>Rate (%)</td><td>Premium
+(SGD)</td><td>Deductible Type</td><td>Deductible
+Description</td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>1</td><td>On Office Equipment, Furniture,
+Fittings and Fixtures including Air
+Conditioner, Computers, Software
+and Other Contents and the like
+description</td><td>250,000.00</td><td>0.000000</td><td>3,000.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td></td><td></td><td>250,000.00</td><td></td><td>3,000.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>Section III</td><td></td><td>Sum Insured
+(SGD)</td><td>Rate (%)</td><td>Premium
+(SGD)</td><td>Deductible Type</td><td>Deductible
+Description</td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>1</td><td>On All Mobile Equipment including
+Notebooks (Company & Employees
+owned), Projectors, and All
+Accessories, Peripherals and the like
+descriptions</td><td>100,000.00</td><td>0.000000</td><td>1,000.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td></td><td></td><td>100,000.00</td><td></td><td>1,000.00</td><td></td><td></td>
+    
+  </tr>
+
+  <tr class="unchanged">
+    
+      <td>Total</td><td></td><td>550,000.00</td><td></td><td>11,500.00</td><td></td><td></td>
+    
+  </tr>
+
+</table>
+
+<div class="table-block-title">
+  Table 3
+  (removed — only in Document A)
+</div>
+<table class="diff-table">
+
+  <tr class="removed">
+    
+      <td>Clause Name</td><td>Clause Description</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AGGREGATE CONDITION OF AVERAGE</td><td>AGGREGATE CONDITION OF AVERAGE deleting the
+application of average condition on individual sums
+insured</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AGREED VALUE FOR ART OBJECTS / PAINTING,
+ANTIQUES</td><td>AGREED VALUE FOR ART OBJECTS / PAINTING,
+ANTIQUES but the insurer shall not be liable to pay
+more than the proportionate value where the
+insured items consist of articles in a pair or set.</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC ADDITION AND DELETION
+ENDORSEMENT</td><td>AUTOMATIC ADDITION AND DELETION
+ENDORSEMENT</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC ADDITIONS CLAUSE</td><td>AUTOMATIC ADDITIONS CLAUSE (but not
+appreciation in value in excess of the Sum Insured)
+for an amount not exceeding RM 5,000.00 (subject
+to declaration within 90 days).</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC HOLD COVER (PROPERTIES IN NEW
+LOCATIONS)</td><td>AUTOMATIC HOLD COVER ( PROPERTIES IN NEW
+LOCATIONS ) automatically held covered up to
+____% of the Policy limit or RM___________ whichever
+is the lower. Note : To be declared by the insured
+within 30 days.</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC INCLUSION CLAUSE (New Properties)</td><td>AUTOMATIC INCLUSION CLAUSE. Subject to the limit
+of ___% of sum insured or RM______ .</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC INCLUSION OF NEW PREMISES
+ENDORSEMENT</td><td>AUTOMATIC INCLUSION OF NEW PREMISES
+ENDORSEMENT</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC REINSTATEMENT OF SUMS INSURED</td><td>AUTOMATIC REINSTATEMENT OF SUMS INSURED</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>AUTOMATIC RENEWAL CLAUSE</td><td>AUTOMATIC RENEWAL CLAUSE (upon expiry unless
+otherwise instructed )</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>BREACH OF CONDITIONS / WARRANTIES CLAUSE</td><td>BREACH OF CONDITIONS / WARRANTIES CLAUSE</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>BREAKAGE OF GLASS COMPONENTS</td><td>BREAKAGE OF GLASS COMPONENTS is included in
+respect of office machines and equipment only.</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>BREAKAGE OF GLASS ENDORSEMENT</td><td>BREAKAGE OF GLASS ENDORSEMENT extended to
+cover bulbs, slides or screens.</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>BURSTING OR OVERFLOWING OF WATER TANKS,
+APPARATUS & PIPES</td><td>BURSTING OR OVERFLOWING OF WATER TANKS,
+APPARATUS & PIPES (EXTENSION)</td>
+    
+  </tr>
+
+</table>
+
+<div class="table-block-title">
+  Table 4
+  (removed — only in Document A)
+</div>
+<table class="diff-table">
+
+  <tr class="removed">
+    
+      <td>Clause Name</td><td>Clause Description</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>BUSH FIRE EXTENSION</td><td>BUSH FIRE EXTENSION</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>CAPITAL ADDITION CLAUSE (Non-Tariff Wording)</td><td>CAPITAL ADDITION CLAUSE covers alterations,
+additions and improvements (limited to 10% of the
+sum insured by each item or RM 1,000,000) (Subject
+to declaration within 90 days).</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>COINSURANCE AND LEADER</td><td>COINSURANCE AND LEADER CLAUSE [RFT
+WORDING]</td>
+    
+  </tr>
+
+  <tr class="removed">
+    
+      <td>COMMUNICABLE DISEASE EXCLUSION
+ENDORSEMENT</td><td>COMMUNICABLE DISEASE EXCLUSION (LMA 5394 -
+Amended)</td>
+    
+  </tr>
+
+</table>
+
+
+
+</body>
+</html>

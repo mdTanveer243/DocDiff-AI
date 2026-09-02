@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PDF Comparison Report</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; color: #222; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  h2 { font-size: 17px; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+  .summary { background: #f4f4f4; padding: 15px 20px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; }
+  .summary b { color: #111; }
+  .legend { font-size: 12px; color: #555; margin-bottom: 20px; }
+  .legend span { display: inline-block; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+  .header-row { display: flex; font-weight: bold; font-size: 13px; color: #555; border-bottom: 2px solid #ccc; padding-bottom: 6px; margin-bottom: 4px; }
+  .row { display: flex; margin-bottom: 4px; border-bottom: 1px solid #eee; padding: 8px 0; }
+  .col { flex: 1; padding: 0 12px; font-size: 14px; line-height: 1.4; }
+  .page-tag { font-size: 11px; color: #999; margin-right: 6px; }
+  .unchanged { background: #ffffff; }
+  .added     { background: #d9f7d9; }
+  .removed   { background: #f8d7da; }
+  .removed .col { text-decoration: line-through; color: #7a2b32; }
+  .modified  { background: #fff3cd; }
+  .tag { display: inline-block; font-size: 11px; color: #6b5900; background: #ffe9a8; border-radius: 3px; padding: 1px 6px; margin-left: 6px; }
+  .tag.substantive { color: #7a1f1f; background: #f5c6c6; }
+  table.diff-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 13px; }
+  table.diff-table td, table.diff-table th { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  table.diff-table th { background: #f0f0f0; }
+  .cell-changed { background: #fff3cd; }
+  .table-block-title { font-size: 13px; color: #555; margin: 18px 0 4px; }
+</style>
+</head>
+<body>
+
+<h1>PDF Comparison Report</h1>
+
+<h2>Text Differences</h2>
+<div class="summary">
+  <b>Total units:</b> {{ text_summary.total }} &nbsp;|&nbsp;
+  <b>Unchanged:</b> {{ text_summary.unchanged }} &nbsp;|&nbsp;
+  <b>Added:</b> {{ text_summary.added }} &nbsp;|&nbsp;
+  <b>Removed:</b> {{ text_summary.removed }} &nbsp;|&nbsp;
+  <b>Modified:</b> {{ text_summary.modified }}
+  ({{ text_summary.substantive }} substantive, {{ text_summary.trivial }} trivial)
+</div>
+<div class="legend">
+  <span class="added">Added</span>
+  <span class="removed">Removed</span>
+  <span class="modified">Modified</span>
+  unchanged rows are shown plain.
+</div>
+<div class="header-row">
+  <div class="col">Document A</div>
+  <div class="col">Document B</div>
+</div>
+{% for item in text_items %}
+<div class="row {{ item.type }}">
+  <div class="col">
+    {% if item.a_page %}<span class="page-tag">p{{ item.a_page }}</span>{% endif %}
+    {{ item.a_text or "" }}
+  </div>
+  <div class="col">
+    {% if item.b_page %}<span class="page-tag">p{{ item.b_page }}</span>{% endif %}
+    {{ item.b_text or "" }}
+    {% if item.severity %}<span class="tag {{ item.severity }}">{{ item.severity }} · {{ item.score }}</span>{% endif %}
+  </div>
+</div>
+{% endfor %}
+
+{% if table_blocks %}
+<h2>Table Differences</h2>
+<div class="summary">
+  <b>Tables compared:</b> {{ table_summary.tables_compared }} &nbsp;|&nbsp;
+  <b>Rows unchanged:</b> {{ table_summary.unchanged }} &nbsp;|&nbsp;
+  <b>Added:</b> {{ table_summary.added }} &nbsp;|&nbsp;
+  <b>Removed:</b> {{ table_summary.removed }} &nbsp;|&nbsp;
+  <b>Modified:</b> {{ table_summary.modified }}
+  ({{ table_summary.substantive }} substantive, {{ table_summary.trivial }} trivial)
+</div>
+
+{% for block in table_blocks %}
+<div class="table-block-title">
+  Table {{ loop.index }}
+  {% if block.table_index_a is none %}(new in Document B){% elif block.table_index_b is none %}(removed — only in Document A){% endif %}
+</div>
+<table class="diff-table">
+{% for row in block.rows %}
+  <tr class="{{ row.type }}">
+    {% if row.type == "modified" %}
+      {% for ca, cb, changed in row.cells %}
+      <td class="{{ 'cell-changed' if changed else '' }}">{{ ca or "" }} &rarr; {{ cb or "" }}</td>
+      {% endfor %}
+    {% elif row.type == "removed" %}
+      {% for c in row.row_a %}<td>{{ c }}</td>{% endfor %}
+    {% elif row.type == "added" %}
+      {% for c in row.row_b %}<td>{{ c }}</td>{% endfor %}
+    {% else %}
+      {% for c in row.row_a %}<td>{{ c }}</td>{% endfor %}
+    {% endif %}
+  </tr>
+{% endfor %}
+</table>
+{% endfor %}
+{% endif %}
+
+</body>
+</html>

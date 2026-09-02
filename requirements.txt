@@ -1,0 +1,7 @@
+pdfplumber
+pymupdf>=1.24.0
+sentence-transformers>=2.7.0
+jinja2>=3.1.0
+numpy>=1.26.0
+pytesseract>=0.3.10
+Pillow>=10.0.0

@@ -1,0 +1,799 @@
+{
+  "text_summary": {
+    "total": 48,
+    "unchanged": 31,
+    "added": 4,
+    "removed": 4,
+    "modified": 9,
+    "trivial": 3,
+    "substantive": 6
+  },
+  "text_differences": [
+    {
+      "type": "modified",
+      "a_text": "Our Reference No: QS1936 Agiliux Cloud Insurance 202201014293 (149990-A) 13 Kenwingston Business Centre, Persiaran Bestari Cyber 9 63000 Selangor",
+      "b_text": "Our Reference No: QS1937 Agiliux Cloud Insurance 202201014293 (149990-A) 13 Kenwingston Business Centre, Persiaran Bestari Cyber 9 63000 Selangor",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 1.0
+    },
+    {
+      "type": "modified",
+      "a_text": "PLACEMENT SLIP NO: QS1936",
+      "b_text": "PLACEMENT SLIP NO: QS1937",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 0.98
+    },
+    {
+      "type": "modified",
+      "a_text": "Tel No: +60311223344 Fax No: +603-4455 6677 PLACEMENT SLIP (ALL RISKS (OTHERS))",
+      "b_text": "Tel No: +60311223344 Fax No: +603-4455 6677 QUOTATION SLIP (ALL RISKS (OTHERS))",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "trivial",
+      "score": 0.8
+    },
+    {
+      "type": "unchanged",
+      "a_text": "CLASS OF INSURANCE: ALL RISKS (OTHERS)",
+      "b_text": "CLASS OF INSURANCE: ALL RISKS (OTHERS)",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "unchanged",
+      "a_text": "CLIENT: SOFT SOLVERS TECHNOLOGY SDN BHD [202201014293 (149990-A)]",
+      "b_text": "CLIENT: SOFT SOLVERS TECHNOLOGY SDN BHD [202201014293 (149990-A)]",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "unchanged",
+      "a_text": "CORRESPONDENCE: Persiaran Bestari Cyber 9 63000, Cyberjaya Selangor, Malaysia.",
+      "b_text": "CORRESPONDENCE: Persiaran Bestari Cyber 9 63000, Cyberjaya Selangor, Malaysia.",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Phone: ADDRESS +603 8687 4433 13 Kenwingston Business Centre Malaysia",
+      "b_text": "Phone: ADDRESS +603 8687 4433 13 Kenwingston Business Centre Malaysia",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "unchanged",
+      "a_text": "PERIOD OF INSURANCE: 13-04-2026 to 12-04-2027 [365] days SUMMARY OF COVER : Summary of Cover",
+      "b_text": "PERIOD OF INSURANCE: 13-04-2026 to 12-04-2027 [365] days SUMMARY OF COVER : Summary of Cover",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "modified",
+      "a_text": "Our Reference No: QS1936 INTEREST INSURED PREMIUM PAYABLE (SGD) Gross Premium 11,500.00 Service Tax (8.00%) 920.00 Premium Due 12,420.00",
+      "b_text": "Our Reference No: QS1937 PREMIUM PAYABLE (SGD) Gross Premium 11,500.00 Service Tax (8.00%) 920.00 Premium Due 12,420.00",
+      "a_page": 3,
+      "b_page": 2,
+      "severity": "substantive",
+      "score": 0.96
+    },
+    {
+      "type": "modified",
+      "a_text": "BUSINESS ACTIVITY AT: Business Activity at Locations of Risk LOCATION[S] OF RISKS E. & O.E. 1 of 5",
+      "b_text": "BUSINESS ACTIVITY AT: Business Activity at Locations of Risk LOCATION[S] OF RISKS INTEREST INSURED E. & O.E.",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 0.89
+    },
+    {
+      "type": "removed",
+      "a_text": "Our Reference No: QS1936 EXTENSION CLAUSE E. & O.E. 2 of 5",
+      "b_text": null,
+      "a_page": 2,
+      "b_page": null
+    },
+    {
+      "type": "added",
+      "a_text": null,
+      "b_text": "1 of 4",
+      "a_page": null,
+      "b_page": 1
+    },
+    {
+      "type": "unchanged",
+      "a_text": "EXECUTIVE IN CHARGE: admin",
+      "b_text": "EXECUTIVE IN CHARGE: admin",
+      "a_page": 3,
+      "b_page": 2
+    },
+    {
+      "type": "unchanged",
+      "a_text": "DATE: 01-09-2026",
+      "b_text": "DATE: 01-09-2026",
+      "a_page": 3,
+      "b_page": 2
+    },
+    {
+      "type": "unchanged",
+      "a_text": "CONDITION PRECEDENT: 1.",
+      "b_text": "CONDITION PRECEDENT: 1.",
+      "a_page": 3,
+      "b_page": 2
+    },
+    {
+      "type": "modified",
+      "a_text": "The validity of this Policy is subject to the condition precedent that: a) For the risk insured, the named insured has never had any insurance terminated in the last 12 months due solely or in part to a breach of any Premium Warranty condition; or b) If the named insured has declared that it had breached any Premium Warranty condition in respect of a previous policy taken up with another insurer in the last 12 months. i) The named insured has fully paid all outstanding premium for time on risk calculated by the previous insurer based on the customary short period rate in respect of the previous policy; and ii) A copy of the evidence of premium paid from the previous insurer to this effect is first provided by the named insured to the Company before cover incepts.\u201d E. & O.E.",
+      "b_text": "The validity of this Policy is subject to the condition precedent that: a) For the risk insured, the named insured has never had any insurance terminated in the last 12 months due solely or in part to a breach of any Premium Warranty condition; or b) If the named insured has declared that it had breached any Premium Warranty condition in respect of a previous policy taken up with another insurer in the last 12 months. i) The named insured has fully paid all outstanding premium for time on risk calculated by the previous insurer based on the customary short period rate in respect of the previous policy; and ii) A copy of the evidence of premium paid from the previous insurer to this effect is first provided by the named insured to the Company before cover incepts.\u201d",
+      "a_page": 3,
+      "b_page": 2,
+      "severity": "trivial",
+      "score": 0.99
+    },
+    {
+      "type": "removed",
+      "a_text": "3 of 5",
+      "b_text": null,
+      "a_page": 3,
+      "b_page": null
+    },
+    {
+      "type": "removed",
+      "a_text": "Our Reference No: QS1936",
+      "b_text": null,
+      "a_page": 4,
+      "b_page": null
+    },
+    {
+      "type": "unchanged",
+      "a_text": "IMPORTANT NOTICE: Anti - Money Laundering Act 2001 - Verification Procedures We would like to highlight to all our clients that in accordance to the latest circular by Bank Negara Malaysia, all policies effected from October 01, 2004 will be subjected to the verification procedures.",
+      "b_text": "IMPORTANT NOTICE: Anti - Money Laundering Act 2001 - Verification Procedures We would like to highlight to all our clients that in accordance to the latest circular by Bank Negara Malaysia, all policies effected from October 01, 2004 will be subjected to the verification procedures.",
+      "a_page": 4,
+      "b_page": 2
+    },
+    {
+      "type": "unchanged",
+      "a_text": "The following documents are required to be submitted ; 1) For Individual - Copy of NRIC or Passport.",
+      "b_text": "The following documents are required to be submitted ; 1) For Individual - Copy of NRIC or Passport.",
+      "a_page": 4,
+      "b_page": 2
+    },
+    {
+      "type": "modified",
+      "a_text": "2) For Corporate - Copy of Company Registration Certificate and/or Audited Profit and Loss Account",
+      "b_text": "2) For Corporate - Copy of Company Registration Certificate and/or Audited Profit and Loss Account E. & O.E.",
+      "a_page": 4,
+      "b_page": 2,
+      "severity": "trivial",
+      "score": 0.96
+    },
+    {
+      "type": "added",
+      "a_text": null,
+      "b_text": "2 of 4",
+      "a_page": null,
+      "b_page": 2
+    },
+    {
+      "type": "added",
+      "a_text": null,
+      "b_text": "Our Reference No: QS1937",
+      "a_page": null,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "DUTY OF DISCLOSURE: Your Duty of Disclosure: In addition to providing all basic information necessary to enable us to place the risk, you must ensure that you are complying with your legal duty of disclosure of all material matters relating to the risk.",
+      "b_text": "DUTY OF DISCLOSURE: Your Duty of Disclosure: In addition to providing all basic information necessary to enable us to place the risk, you must ensure that you are complying with your legal duty of disclosure of all material matters relating to the risk.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "In particular, you must satisfy yourself as to the accuracy and completeness of the information you provide to insurers.",
+      "b_text": "In particular, you must satisfy yourself as to the accuracy and completeness of the information you provide to insurers.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "In this respect, you must provide all information relating to the risk, whether favourable or not, which would influence the judgement of a prudent insurer in determining whether he will take the risk, and, if so, for what premium and on what terms.",
+      "b_text": "In this respect, you must provide all information relating to the risk, whether favourable or not, which would influence the judgement of a prudent insurer in determining whether he will take the risk, and, if so, for what premium and on what terms.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "If all such information is not disclosed by you, insurers have the right to avoid the contract from its commencement' which may lead to claims not being met.",
+      "b_text": "If all such information is not disclosed by you, insurers have the right to avoid the contract from its commencement' which may lead to claims not being met.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Non-Disclosure: If you fail to comply with your duty of disclosure, the Insurer may have the option of avoiding the contract of insurance from its beginning.",
+      "b_text": "Non-Disclosure: If you fail to comply with your duty of disclosure, the Insurer may have the option of avoiding the contract of insurance from its beginning.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "If your non-disclosure is fraudulent, the Insurer may also have the right to keep the premium that you have paid.",
+      "b_text": "If your non-disclosure is fraudulent, the Insurer may also have the right to keep the premium that you have paid.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Change of Risk or Circumstances: You should advise BIB Insurance Brokers Sdn Bhd as soon as practicable of any change to your normal business as disclosed in the application, such as changes in business activities, location, acquisitions and new overseas activities.",
+      "b_text": "Change of Risk or Circumstances: You should advise BIB Insurance Brokers Sdn Bhd as soon as practicable of any change to your normal business as disclosed in the application, such as changes in business activities, location, acquisitions and new overseas activities.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "unchanged",
+      "a_text": "E. & O.E.",
+      "b_text": "E. & O.E.",
+      "a_page": 4,
+      "b_page": 3
+    },
+    {
+      "type": "modified",
+      "a_text": "Our Reference No: QS1936",
+      "b_text": "Our Reference No: QS1937",
+      "a_page": 5,
+      "b_page": 4,
+      "severity": "substantive",
+      "score": 0.96
+    },
+    {
+      "type": "modified",
+      "a_text": "4 of 5",
+      "b_text": "3 of 4",
+      "a_page": 4,
+      "b_page": 3,
+      "severity": "substantive",
+      "score": 0.84
+    },
+    {
+      "type": "unchanged",
+      "a_text": "DECLARATION & CONSENT: In line with the Personal Data Protection Act 2010 (\u201cPDPA\u201d), we are required to inform you that the personal data you have provided to us or that is subsequently obtained by us from time to time (\u201cPersonal Data\u201d), may be processed for the purpose of processing your insurance application/proposal, provision of insurance related products or services or any addition, alteration, variation, cancellation, renewal or reinstatement thereof, performing statistical/actuarial research or data study, promoting products and services and other related purposes (collectively, \u201cPurpose\u201d).",
+      "b_text": "DECLARATION & CONSENT: In line with the Personal Data Protection Act 2010 (\u201cPDPA\u201d), we are required to inform you that the personal data you have provided to us or that is subsequently obtained by us from time to time (\u201cPersonal Data\u201d), may be processed for the purpose of processing your insurance application/proposal, provision of insurance related products or services or any addition, alteration, variation, cancellation, renewal or reinstatement thereof, performing statistical/actuarial research or data study, promoting products and services and other related purposes (collectively, \u201cPurpose\u201d).",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "The Personal Data is obtained when you fill up documents; liaise with us or our representatives; or give it to us or our representatives in person, over the telephone, through websites or from third parties you have consented to.",
+      "b_text": "The Personal Data is obtained when you fill up documents; liaise with us or our representatives; or give it to us or our representatives in person, over the telephone, through websites or from third parties you have consented to.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Although you are not obliged to provide us with your Personal Data, we will not be able to process your application for insurance cover or process your claim if you fail to provide all requested information.",
+      "b_text": "Although you are not obliged to provide us with your Personal Data, we will not be able to process your application for insurance cover or process your claim if you fail to provide all requested information.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Your Personal Data may be disclosed to our related company or any other company carrying on insurance or reinsurance related business, an intermediary, or a claims, investigation or other service provider and to any association, federation or similar organisation of insurance companies that exists or is formed from time to time for the Purpose or to fulfil some legal or regulatory function or is reasonably required in the interest of the insurance industry.",
+      "b_text": "Your Personal Data may be disclosed to our related company or any other company carrying on insurance or reinsurance related business, an intermediary, or a claims, investigation or other service provider and to any association, federation or similar organisation of insurance companies that exists or is formed from time to time for the Purpose or to fulfil some legal or regulatory function or is reasonably required in the interest of the insurance industry.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "In such instances, it will be done in compliance with the PDPA.",
+      "b_text": "In such instances, it will be done in compliance with the PDPA.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "We may also disclose your Personal Data where such disclosure is required under the law, court orders or pursuant to guidelines issued by regulatory or other relevant authorities, if we reasonably believe that we have a lawful right to disclose your Personal Data to any third party or that we would have had your consent for such disclosure if you had known of the same, and/or if the disclosure is in the public interest.",
+      "b_text": "We may also disclose your Personal Data where such disclosure is required under the law, court orders or pursuant to guidelines issued by regulatory or other relevant authorities, if we reasonably believe that we have a lawful right to disclose your Personal Data to any third party or that we would have had your consent for such disclosure if you had known of the same, and/or if the disclosure is in the public interest.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Your Personal Data may also be transferred to our related companies and third party providers, which may be located outside Malaysia for the Purpose.",
+      "b_text": "Your Personal Data may also be transferred to our related companies and third party providers, which may be located outside Malaysia for the Purpose.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "In the event that we use external service providers, specific security and confidentiality safeguards have been put in place to ensure your privacy rights remain unaffected.",
+      "b_text": "In the event that we use external service providers, specific security and confidentiality safeguards have been put in place to ensure your privacy rights remain unaffected.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "Where you have given us personal data that is of another individual (\u201cData Subject\u201d), you must ensure that you have informed the Data Subject that you are providing the Data Subject's personal data to us, and have gotten the Data Subject's consent to do so.",
+      "b_text": "Where you have given us personal data that is of another individual (\u201cData Subject\u201d), you must ensure that you have informed the Data Subject that you are providing the Data Subject's personal data to us, and have gotten the Data Subject's consent to do so.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "You must explain what is stated here to the Data Subject, and ensure he/she understands, agrees and authorises us to deal with his/her personal data according to what is stated here.",
+      "b_text": "You must explain what is stated here to the Data Subject, and ensure he/she understands, agrees and authorises us to deal with his/her personal data according to what is stated here.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "You may make inquiries, complaints, request for access to or correction of your Personal Data, or limit the processing of your Personal Data at any time hereafter by submitting such request to us at BIB Insurance Brokers Sdn Bhd, Wisma Hong Leong, Lot 05.01, Level 5, 18, Jalan Perak, 50450 Kuala Lumpur, Federal Territory of Kuala Lumpur, 03-9078 2480.",
+      "b_text": "You may make inquiries, complaints, request for access to or correction of your Personal Data, or limit the processing of your Personal Data at any time hereafter by submitting such request to us at BIB Insurance Brokers Sdn Bhd, Wisma Hong Leong, Lot 05.01, Level 5, 18, Jalan Perak, 50450 Kuala Lumpur, Federal Territory of Kuala Lumpur, 03-9078 2480.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "By continuing to deal with us, you understand, agree and consent to the terms above with respect to the processing of your Personal Data.",
+      "b_text": "By continuing to deal with us, you understand, agree and consent to the terms above with respect to the processing of your Personal Data.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "unchanged",
+      "a_text": "E. & O.E.",
+      "b_text": "E. & O.E.",
+      "a_page": 5,
+      "b_page": 4
+    },
+    {
+      "type": "removed",
+      "a_text": "5 of 5",
+      "b_text": null,
+      "a_page": 5,
+      "b_page": null
+    },
+    {
+      "type": "added",
+      "a_text": null,
+      "b_text": "4 of 4",
+      "a_page": null,
+      "b_page": 4
+    }
+  ],
+  "table_summary": {
+    "tables_compared": 4,
+    "unchanged": 11,
+    "added": 0,
+    "removed": 19,
+    "modified": 1,
+    "trivial": 0,
+    "substantive": 1
+  },
+  "table_differences": [
+    {
+      "table_index_a": 3,
+      "table_index_b": 1,
+      "rows": [
+        {
+          "type": "unchanged",
+          "row_a": [
+            "INSURER(S)",
+            "Share(%)"
+          ],
+          "row_b": [
+            "INSURER(S)",
+            "Share(%)"
+          ]
+        },
+        {
+          "type": "modified",
+          "row_a": [
+            "[Sample] AIA PUBLIC TAKAFUL BHD",
+            "100.000000"
+          ],
+          "row_b": [
+            "[Sample] ALLIANZ GENERAL INSURANCE COMPANY (MALAYSIA) BERHAD",
+            "100.000000"
+          ],
+          "severity": "substantive",
+          "cells": [
+            [
+              "[Sample] AIA PUBLIC TAKAFUL BHD",
+              "[Sample] ALLIANZ GENERAL INSURANCE COMPANY (MALAYSIA) BERHAD",
+              true
+            ],
+            [
+              "100.000000",
+              "100.000000",
+              false
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "table_index_a": 2,
+      "table_index_b": 0,
+      "rows": [
+        {
+          "type": "unchanged",
+          "row_a": [
+            "Section I",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ],
+          "row_b": [
+            "Section I",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "1",
+            "On Renovations, Office Equipment,\nFurniture, Fittings & Fixtures\nincluding Air Conditioner,\nComputers, Software & Other\nContents the like description",
+            "200,000.00",
+            "0.000000",
+            "7,500.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "1",
+            "On Renovations, Office Equipment,\nFurniture, Fittings & Fixtures\nincluding Air Conditioner,\nComputers, Software & Other\nContents the like description",
+            "200,000.00",
+            "0.000000",
+            "7,500.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "",
+            "",
+            "200,000.00",
+            "",
+            "7,500.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "",
+            "",
+            "200,000.00",
+            "",
+            "7,500.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "Section II",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ],
+          "row_b": [
+            "Section II",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "1",
+            "On Office Equipment, Furniture,\nFittings and Fixtures including Air\nConditioner, Computers, Software\nand Other Contents and the like\ndescription",
+            "250,000.00",
+            "0.000000",
+            "3,000.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "1",
+            "On Office Equipment, Furniture,\nFittings and Fixtures including Air\nConditioner, Computers, Software\nand Other Contents and the like\ndescription",
+            "250,000.00",
+            "0.000000",
+            "3,000.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "",
+            "",
+            "250,000.00",
+            "",
+            "3,000.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "",
+            "",
+            "250,000.00",
+            "",
+            "3,000.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "Section III",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ],
+          "row_b": [
+            "Section III",
+            "",
+            "Sum Insured\n(SGD)",
+            "Rate (%)",
+            "Premium\n(SGD)",
+            "Deductible Type",
+            "Deductible\nDescription"
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "1",
+            "On All Mobile Equipment including\nNotebooks (Company & Employees\nowned), Projectors, and All\nAccessories, Peripherals and the like\ndescriptions",
+            "100,000.00",
+            "0.000000",
+            "1,000.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "1",
+            "On All Mobile Equipment including\nNotebooks (Company & Employees\nowned), Projectors, and All\nAccessories, Peripherals and the like\ndescriptions",
+            "100,000.00",
+            "0.000000",
+            "1,000.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "",
+            "",
+            "100,000.00",
+            "",
+            "1,000.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "",
+            "",
+            "100,000.00",
+            "",
+            "1,000.00",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "unchanged",
+          "row_a": [
+            "Total",
+            "",
+            "550,000.00",
+            "",
+            "11,500.00",
+            "",
+            ""
+          ],
+          "row_b": [
+            "Total",
+            "",
+            "550,000.00",
+            "",
+            "11,500.00",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "table_index_a": 0,
+      "table_index_b": null,
+      "rows": [
+        {
+          "type": "removed",
+          "row_a": [
+            "Clause Name",
+            "Clause Description"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AGGREGATE CONDITION OF AVERAGE",
+            "AGGREGATE CONDITION OF AVERAGE deleting the\napplication of average condition on individual sums\ninsured"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AGREED VALUE FOR ART OBJECTS / PAINTING,\nANTIQUES",
+            "AGREED VALUE FOR ART OBJECTS / PAINTING,\nANTIQUES but the insurer shall not be liable to pay\nmore than the proportionate value where the\ninsured items consist of articles in a pair or set."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC ADDITION AND DELETION\nENDORSEMENT",
+            "AUTOMATIC ADDITION AND DELETION\nENDORSEMENT"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC ADDITIONS CLAUSE",
+            "AUTOMATIC ADDITIONS CLAUSE (but not\nappreciation in value in excess of the Sum Insured)\nfor an amount not exceeding RM 5,000.00 (subject\nto declaration within 90 days)."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC HOLD COVER (PROPERTIES IN NEW\nLOCATIONS)",
+            "AUTOMATIC HOLD COVER ( PROPERTIES IN NEW\nLOCATIONS ) automatically held covered up to\n____% of the Policy limit or RM___________ whichever\nis the lower. Note : To be declared by the insured\nwithin 30 days."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC INCLUSION CLAUSE (New Properties)",
+            "AUTOMATIC INCLUSION CLAUSE. Subject to the limit\nof ___% of sum insured or RM______ ."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC INCLUSION OF NEW PREMISES\nENDORSEMENT",
+            "AUTOMATIC INCLUSION OF NEW PREMISES\nENDORSEMENT"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC REINSTATEMENT OF SUMS INSURED",
+            "AUTOMATIC REINSTATEMENT OF SUMS INSURED"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "AUTOMATIC RENEWAL CLAUSE",
+            "AUTOMATIC RENEWAL CLAUSE (upon expiry unless\notherwise instructed )"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "BREACH OF CONDITIONS / WARRANTIES CLAUSE",
+            "BREACH OF CONDITIONS / WARRANTIES CLAUSE"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "BREAKAGE OF GLASS COMPONENTS",
+            "BREAKAGE OF GLASS COMPONENTS is included in\nrespect of office machines and equipment only."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "BREAKAGE OF GLASS ENDORSEMENT",
+            "BREAKAGE OF GLASS ENDORSEMENT extended to\ncover bulbs, slides or screens."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "BURSTING OR OVERFLOWING OF WATER TANKS,\nAPPARATUS & PIPES",
+            "BURSTING OR OVERFLOWING OF WATER TANKS,\nAPPARATUS & PIPES (EXTENSION)"
+          ],
+          "row_b": []
+        }
+      ]
+    },
+    {
+      "table_index_a": 1,
+      "table_index_b": null,
+      "rows": [
+        {
+          "type": "removed",
+          "row_a": [
+            "Clause Name",
+            "Clause Description"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "BUSH FIRE EXTENSION",
+            "BUSH FIRE EXTENSION"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "CAPITAL ADDITION CLAUSE (Non-Tariff Wording)",
+            "CAPITAL ADDITION CLAUSE covers alterations,\nadditions and improvements (limited to 10% of the\nsum insured by each item or RM 1,000,000) (Subject\nto declaration within 90 days)."
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "COINSURANCE AND LEADER",
+            "COINSURANCE AND LEADER CLAUSE [RFT\nWORDING]"
+          ],
+          "row_b": []
+        },
+        {
+          "type": "removed",
+          "row_a": [
+            "COMMUNICABLE DISEASE EXCLUSION\nENDORSEMENT",
+            "COMMUNICABLE DISEASE EXCLUSION (LMA 5394 -\nAmended)"
+          ],
+          "row_b": []
+        }
+      ]
+    }
+  ]
+}
