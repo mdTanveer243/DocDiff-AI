@@ -1,0 +1,80 @@
+{
+  "text_summary": {
+    "total": 7,
+    "unchanged": 2,
+    "added": 1,
+    "removed": 0,
+    "modified": 4,
+    "trivial": 1,
+    "substantive": 3
+  },
+  "text_differences": [
+    {
+      "type": "unchanged",
+      "a_text": "This Agreement is made between Acme Corp and the Vendor for the supply of goods.",
+      "b_text": "This Agreement is made between Acme Corp and the Vendor for the supply of goods.",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "modified",
+      "a_text": "The vendor shall deliver the goods within 30 days of order confirmation.",
+      "b_text": "The vendor shall deliver the goods within 45 business days of order confirmation.",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 0.93
+    },
+    {
+      "type": "modified",
+      "a_text": "Either party may terminate this agreement with 60 days written notice.",
+      "b_text": "Either party may terminate this agreement with 30 days written notice.",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 0.93
+    },
+    {
+      "type": "modified",
+      "a_text": "Payment is due on receipt of invoice.",
+      "b_text": "Payment is due within 15 days of receipt of invoice.",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "substantive",
+      "score": 0.83
+    },
+    {
+      "type": "unchanged",
+      "a_text": "This agreement shall be governed by the laws of the State of Delaware.",
+      "b_text": "This agreement shall be governed by the laws of the State of Delaware.",
+      "a_page": 1,
+      "b_page": 1
+    },
+    {
+      "type": "modified",
+      "a_text": "All disputes shall be resolved through binding arbitration in New York.",
+      "b_text": "All disputes shall be resolved through binding arbitration in Chicago.",
+      "a_page": 1,
+      "b_page": 1,
+      "severity": "trivial",
+      "score": 0.91
+    },
+    {
+      "type": "added",
+      "a_text": null,
+      "b_text": "The vendor must maintain liability insurance of at least $1,000,000 throughout the term.",
+      "a_page": null,
+      "b_page": 1
+    }
+  ],
+  "table_summary": {
+    "tables_compared": 0,
+    "unchanged": 0,
+    "added": 0,
+    "removed": 0,
+    "modified": 0,
+    "trivial": 0,
+    "substantive": 0
+  },
+  "table_differences": []
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PDF Comparison Report</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; color: #222; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  h2 { font-size: 17px; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+  .summary { background: #f4f4f4; padding: 15px 20px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; }
+  .summary b { color: #111; }
+  .legend { font-size: 12px; color: #555; margin-bottom: 20px; }
+  .legend span { display: inline-block; padding: 2px 8px; border-radius: 4px; margin-right: 10px; }
+  .header-row { display: flex; font-weight: bold; font-size: 13px; color: #555; border-bottom: 2px solid #ccc; padding-bottom: 6px; margin-bottom: 4px; }
+  .row { display: flex; margin-bottom: 4px; border-bottom: 1px solid #eee; padding: 8px 0; }
+  .col { flex: 1; padding: 0 12px; font-size: 14px; line-height: 1.4; }
+  .page-tag { font-size: 11px; color: #999; margin-right: 6px; }
+  .unchanged { background: #ffffff; }
+  .added     { background: #d9f7d9; }
+  .removed   { background: #f8d7da; }
+  .removed .col { text-decoration: line-through; color: #7a2b32; }
+  .modified  { background: #fff3cd; }
+  .tag { display: inline-block; font-size: 11px; color: #6b5900; background: #ffe9a8; border-radius: 3px; padding: 1px 6px; margin-left: 6px; }
+  .tag.substantive { color: #7a1f1f; background: #f5c6c6; }
+  table.diff-table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 13px; }
+  table.diff-table td, table.diff-table th { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  table.diff-table th { background: #f0f0f0; }
+  .cell-changed { background: #fff3cd; }
+  .table-block-title { font-size: 13px; color: #555; margin: 18px 0 4px; }
+</style>
+</head>
+<body>
+
+<h1>PDF Comparison Report</h1>
+
+<h2>Text Differences</h2>
+<div class="summary">
+  <b>Total units:</b> 7 &nbsp;|&nbsp;
+  <b>Unchanged:</b> 2 &nbsp;|&nbsp;
+  <b>Added:</b> 1 &nbsp;|&nbsp;
+  <b>Removed:</b> 0 &nbsp;|&nbsp;
+  <b>Modified:</b> 4
+  (3 substantive, 1 trivial)
+</div>
+<div class="legend">
+  <span class="added">Added</span>
+  <span class="removed">Removed</span>
+  <span class="modified">Modified</span>
+  unchanged rows are shown plain.
+</div>
+<div class="header-row">
+  <div class="col">Document A</div>
+  <div class="col">Document B</div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    This Agreement is made between Acme Corp and the Vendor for the supply of goods.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    This Agreement is made between Acme Corp and the Vendor for the supply of goods.
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    The vendor shall deliver the goods within 30 days of order confirmation.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    The vendor shall deliver the goods within 45 business days of order confirmation.
+    <span class="tag substantive">substantive · 0.93</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Either party may terminate this agreement with 60 days written notice.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Either party may terminate this agreement with 30 days written notice.
+    <span class="tag substantive">substantive · 0.93</span>
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Payment is due on receipt of invoice.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    Payment is due within 15 days of receipt of invoice.
+    <span class="tag substantive">substantive · 0.83</span>
+  </div>
+</div>
+
+<div class="row unchanged">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    This agreement shall be governed by the laws of the State of Delaware.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    This agreement shall be governed by the laws of the State of Delaware.
+    
+  </div>
+</div>
+
+<div class="row modified">
+  <div class="col">
+    <span class="page-tag">p1</span>
+    All disputes shall be resolved through binding arbitration in New York.
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    All disputes shall be resolved through binding arbitration in Chicago.
+    <span class="tag trivial">trivial · 0.91</span>
+  </div>
+</div>
+
+<div class="row added">
+  <div class="col">
+    
+    
+  </div>
+  <div class="col">
+    <span class="page-tag">p1</span>
+    The vendor must maintain liability insurance of at least $1,000,000 throughout the term.
+    
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

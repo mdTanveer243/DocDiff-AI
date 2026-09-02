@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 from src.extractor import extract_pages
 from src.chunker import chunk_pages
 from src.aligner import align_documents
@@ -14,7 +15,7 @@ def _row_text(row):
     return " | ".join(str(c) if c is not None else "" for c in row)
 
 
-def compare_pdfs(pdf_a_path, pdf_b_path, out_prefix="report"):
+def compare_pdfs(pdf_a_path, pdf_b_path, out_prefix="Reports/report"):
     pages_a = extract_pages(pdf_a_path)
     pages_b = extract_pages(pdf_b_path)
 
@@ -39,6 +40,8 @@ def compare_pdfs(pdf_a_path, pdf_b_path, out_prefix="report"):
 
     html, data = build_report(text_results, table_results)
 
+    os.makedirs(os.path.dirname(out_prefix) or ".", exist_ok=True)
+
     with open(f"{out_prefix}.html", "w", encoding="utf-8") as f:
         f.write(html)
     with open(f"{out_prefix}.json", "w", encoding="utf-8") as f:
@@ -52,6 +55,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compare two PDF documents.")
     parser.add_argument("pdf_a")
     parser.add_argument("pdf_b")
-    parser.add_argument("--out", default="report")
+    parser.add_argument("--out", default="Reports/report")
     args = parser.parse_args()
     compare_pdfs(args.pdf_a, args.pdf_b, args.out)
