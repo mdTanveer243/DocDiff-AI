@@ -1,77 +1,132 @@
-# Approach
+# DocDiff-AI — PDF Content Comparison Tool
 
-## What this is
+Goes beyond a plain text diff — catches paraphrased clauses and changes
+hidden inside tables using Sentence Transformer embeddings and structural
+comparison, not just exact string matching.
 
-A tool that compares two PDFs and reports what was added, removed, or
-modified — including changes a plain text diff would miss: reworded
-sentences ("30 days" → "45 business days") and changes buried inside
-tables (e.g. an insurer name swapped in a policy schedule). It's built to
-work on any PDF pair, not tuned to one document type — verified against
-both a synthetic prose contract and a real, table-heavy insurance quote
-pair.
+A tool that compares two PDFs — contracts, policies, forms, quotes,
+anything — and produces a structured, color-coded report of what was
+added, removed, and modified. It catches two kinds of differences a plain
+text diff would miss:
 
-## Extraction
+- **Reworded/paraphrased sentences** (e.g. "30 days" → "45 business days")
+  via semantic similarity, not just exact string matching.
+- **Changes buried inside tables** (e.g. an insurer name, a premium figure)
+  via structural table extraction and row/cell-level diffing, not just
+  flattened text.
 
-Each page is split into two streams using `pdfplumber`: **prose text**
-(everything outside a detected table, found via bounding-box filtering)
-and **tables** (structured rows/columns via `pdfplumber.find_tables()`).
-This split matters more than it sounds — a naive plain-text extraction
-flattens a table's rows and columns into one run-on line, which destroys
-exactly the structure needed to catch a change buried in a single cell.
-Pages with almost no extractable content in either stream are treated as
-scanned images and OCR'd via Tesseract.
+The pipeline is generic — it makes no assumption about document type,
+field names, or table structure. Verified against both a synthetic prose
+contract and a real, table-heavy insurance quote pair.
 
-## Comparison logic
+## Tech stack
 
-**Prose** is aligned in two passes: `difflib.SequenceMatcher` does a cheap
-structural pass first (free handling of reordering, minimal work for
-unchanged content), then sentence-embedding cosine similarity
-(`all-MiniLM-L6-v2`) runs only inside the ambiguous "replace" regions to
-catch reworded sentences that `difflib` alone would call unrelated
-add+delete.
+| Purpose | Library / Model |
+|---|---|
+| PDF text & table extraction | [`pdfplumber`](https://github.com/jsvine/pdfplumber) |
+| OCR fallback (scanned pages) | [`PyMuPDF`](https://pymupdf.readthedocs.io/) (rasterization) + [`pytesseract`](https://github.com/madmaze/pytesseract) (Tesseract OCR) |
+| Structural diffing | Python's built-in `difflib.SequenceMatcher` |
+| Semantic similarity (paraphrase detection) | [`sentence-transformers`](https://www.sbert.net/) — **Sentence-BERT (SBERT)**, model: [`all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) |
+| Similarity computation | `numpy` (cosine similarity) |
+| HTML report templating | `Jinja2` |
+| Language | Python 3.9+ |
 
-**Tables** are matched to each other across the two documents by
-header/first-row similarity, using global best-score-first assignment
-(not document order — an early version assigned in order and let a weak
-match grab a table before a much stronger match for the same table got a
-chance; sorting all candidate pairs first fixes this). Matched tables are
-then diffed row-by-row and, within a modified row, cell-by-cell.
+The core AI/ML component is **Sentence-BERT** (via the `sentence-transformers`
+library), used to embed sentences and compare them by cosine similarity —
+this is what lets the tool recognize that two differently-worded sentences
+express the same underlying content, rather than reading them as an
+unrelated deletion and addition.
 
-Every modified pair, text or table, is tagged `trivial` or `substantive`:
-a changed number/date/obligation-word (`shall`/`must`) triggers
-substantive, and as a fallback, so does low word-overlap between the two
-versions — which is what catches something like an entity name changing
-with no numbers or keywords involved at all.
+## How it works
 
-## The AI/ML component
+The pipeline runs two independent streams and reports both:
 
-Sentence-transformer embeddings + cosine similarity are what let the tool
-go beyond exact string matching: two sentences with almost no shared words
-but the same meaning still get correctly paired as "modified" rather than
-scored as an unrelated add/delete. This only runs where `difflib` can't
-already resolve the alignment cheaply, keeping the embedding cost small
-even on longer documents.
+**1. Extract** (`src/extractor.py`)
+Each page is split into two generic streams using `pdfplumber`:
+- **Prose text** — everything on the page *outside* any detected table
+  (found via bounding-box filtering, not by looking for specific text).
+- **Tables** — structured row/column data for every table `pdfplumber`
+  finds on the page.
 
-## Output
+If a page yields almost no extractable content in either stream, it's
+treated as a scanned image and falls back to OCR (via PyMuPDF's pixmap
+rendering + `pytesseract`).
 
-A single HTML report (color-coded: green/red/yellow) with two sections —
-Text Differences and Table Differences, the latter only appearing when the
-documents actually contain tables — plus a structured JSON export of the
-same data.
+**2. Chunk** (`src/chunker.py`)
+The prose stream is split into comparable units using two generic patterns:
+- `"Label: value"` on one line, or a label line followed by a lone `":"`
+  line and the value on the next line (a layout artifact PDFs produce when
+  a form field was rendered as a 3-column table).
+- Everything else falls through to ordinary sentence splitting.
 
-## What I'd do with more time
+Label detection is shape-based (short line, ALL CAPS or mostly Title Case,
+no terminal punctuation) — not a list of known field names — so it works
+whether the document is a legal contract or a form.
 
-- Apply the same embedding-based matching used for prose to table rows
-  (currently position-based within a replace block, so a table that's
-  both reordered and reworded at once could mismatch).
-- Replace the rule-based trivial/substantive classifier with a small
-  model trained on labeled diff examples — the current word-overlap
-  fallback is a blunt instrument that can't distinguish "most wording
-  changed, meaning didn't" from "meaning changed too."
-- Handle sentence/row merge-split (one unit becoming two, or vice versa),
-  which the current 1:1 alignment doesn't support.
+**3. Align text** (`src/aligner.py`) — two passes:
+- A structural pass using `difflib.SequenceMatcher`, which cheaply finds
+  unchanged/added/removed/"replace" regions and naturally handles sentences
+  that just moved position.
+- A semantic pass using **Sentence-BERT embeddings** (`all-MiniLM-L6-v2`,
+  via `sentence-transformers`) + cosine similarity, run only inside the
+  ambiguous "replace" regions, to match up reworded sentences that
+  `difflib` alone would flag as unrelated add+delete.
 
+**4. Diff tables** (`src/table_differ.py`)
+Tables extracted from each document are matched to each other by
+header/first-row similarity (using global best-score-first assignment, not
+document order — position-based matching would incorrectly pair, say, an
+unrelated clause table with a data table just because it came first). Matched
+tables are then diffed row-by-row (`difflib`) and, within a modified row,
+cell-by-cell.
 
+**5. Classify** (`src/classifier.py`)
+Every modified pair (text or table) is tagged `trivial` (only
+whitespace/punctuation changed) or `substantive`. Substantive triggers:
+a changed number or date, a changed obligation word (`shall`/`must`/etc.),
+or — as a generic fallback — low word overlap between the two versions,
+which catches things like an entity/name swap that doesn't involve any
+number or keyword at all.
+
+**6. Render** (`src/renderer.py` + `templates/report.html.j2`)
+Produces a single color-coded HTML report (Text Differences + Table
+Differences sections — the table section only appears if the documents
+actually contain tables) and a structured JSON export.
+
+Color coding: 🟩 green = added, 🟥 red (strikethrough) = removed,
+🟨 yellow = modified (tagged trivial/substantive with a similarity score).
+
+## Project structure
+
+```
+pdf-compare/
+├── README.md
+├── APPROACH.md
+├── requirements.txt
+├── main.py
+├── make_samples.py
+├── test_aligner.py
+├── src/
+│   ├── __init__.py
+│   ├── extractor.py
+│   ├── chunker.py
+│   ├── aligner.py
+│   ├── classifier.py
+│   ├── table_differ.py
+│   └── renderer.py
+├── templates/
+│   └── report.html.j2
+├── samples/
+│   ├── pair1_docA.pdf          # synthetic prose contract pair
+│   ├── pair1_docB.pdf
+│   ├── Quotes_QS1936.pdf       # real table-heavy insurance quote pair
+│   └── Quotes_QS1937.pdf
+└── Reports/                     # generated output — created automatically
+    ├── pair1_report.html
+    ├── pair1_report.json
+    ├── quotes_report.html
+    └── quotes_report.json
+```
 
 ## Setup
 
@@ -83,7 +138,7 @@ source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-The first run downloads the `all-MiniLM-L6-v2` sentence-embedding model
+The first run downloads the Sentence-BERT model `all-MiniLM-L6-v2`
 (~80MB) from Hugging Face — needs an internet connection once, then it's
 cached locally.
 
@@ -129,12 +184,12 @@ python test_aligner.py
 ## Design decisions
 
 - **Two independent streams (prose vs. tables)** instead of one flattened
-  text stream: PyMuPDF-style plain-text extraction collapses a table's
-  rows and columns into one run-on line, which destroys exactly the
-  structure needed to catch a change buried in one cell (e.g. an insurer
-  name). Splitting tables out via `pdfplumber` bounding boxes and diffing
-  them structurally is what makes that catch possible.
-- **`difflib` + embeddings, not embeddings alone**, for prose: matching
+  text stream: plain-text extraction collapses a table's rows and columns
+  into one run-on line, which destroys exactly the structure needed to
+  catch a change buried in one cell (e.g. an insurer name). Splitting
+  tables out via `pdfplumber` bounding boxes and diffing them structurally
+  is what makes that catch possible.
+- **`difflib` + Sentence-BERT, not embeddings alone**, for prose: matching
   every sentence in doc A against every sentence in doc B with embeddings
   is O(n²) and can misfire on repeated boilerplate. `difflib.SequenceMatcher`
   gives free, cheap structural alignment, so embeddings only need to run on
@@ -173,9 +228,7 @@ python test_aligner.py
   layout reconstruction, so multi-column scanned pages may come out jumbled.
 - Table row matching inside a "replace" block is position-based (not
   embedding-based like the prose aligner), so a table where rows were
-  reordered *and* reworded at the same time may mismatch — a natural next
-  step would be to apply the same embedding-based matching used for prose
-  to table rows.
+  reordered *and* reworded at the same time may mismatch.
 - Sentence splitting is regex-based, not a full NLP tokenizer, so unusual
   punctuation (e.g. abbreviations like "Corp." or "Sec.") can occasionally
   cause an over-split.
@@ -190,8 +243,10 @@ python test_aligner.py
 
 - Replace the rule-based trivial/substantive classifier with a small
   fine-tuned model trained on labeled contract-diff examples.
-- Add a cross-encoder re-ranking step on top of the bi-encoder similarity
-  for higher-precision paraphrase matching.
+- Add a cross-encoder re-ranking step on top of the SBERT bi-encoder
+  similarity for higher-precision paraphrase matching.
 - Apply embedding-based row matching to tables (currently position-based
   within a replace block), matching the approach already used for prose.
 - Support sentence/row merge-split detection instead of only 1:1 alignment.
+
+See `APPROACH.md` for a shorter, interview-facing summary of the design.
